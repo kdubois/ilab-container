@@ -42,12 +42,15 @@ When running our model, we want to create some paths that will be mounted in the
 `podman unshare chown 1001:1001 -R ${HOME}/.ilab`
 
 Then, we can run the container, mounting the above folder and using NVIDIA GPUs.
+
 `podman run --rm -it --user 1001 --device nvidia.com/gpu=all --ipc=host --network host --volume ${HOME}/.ilab:/opt/app-root/src:Z --entrypoint ilab quay.io/rh-aiservices-bu/instructlab-workbench-code-server-cuda:0.20.1 config init`
 
 To make things easier, we can create an alias (and add it to our ~/.bashrc file)
+
 `alias ilab="podman run --rm -it --user 1001 --device nvidia.com/gpu=all --ipc=host --network host --volume ${HOME}/.ilab:/opt/app-root/src:Z --entrypoint ilab quay.io/rh-aiservices-bu/instructlab-workbench-code-server-cuda:0.20.1"`
 
 And now we can just use the 'ilab' command:
+
 `ilab config init`
 
 

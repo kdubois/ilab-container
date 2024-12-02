@@ -23,9 +23,11 @@ To configure your machine running RHEL 9.4+, you can follow NVIDIA's documentati
 
 Here is a quick procedure if you haven't.
 
-`curl -s -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo | sudo tee /etc/yum.repos.d/nvidia-container-toolkit.repo
-sudo dnf config-manager --enable nvidia-container-toolkit-experimental
-sudo dnf install -y nvidia-container-toolkit`
+`curl -s -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo | sudo tee /etc/yum.repos.d/nvidia-container-toolkit.repo`
+
+`sudo dnf config-manager --enable nvidia-container-toolkit-experimental`
+
+`sudo dnf install -y nvidia-container-toolkit`
 
 Then, you can verify that NVIDIA container toolkit can see your GPUs.
 
